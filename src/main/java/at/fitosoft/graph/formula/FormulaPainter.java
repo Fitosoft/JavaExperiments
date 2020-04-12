@@ -30,7 +30,7 @@ public abstract class FormulaPainter {
 
     private void draw(double x, double y, double z) {
         final double sig = Exponents.significant(z);
-        final int sigIndex = (int) Math.floor(sig * nrOfColors);
+        final int sigIndex = (int) Math.floor((sig - 1) * 10 / 9 * nrOfColors);
         raster.drawPoint(x, y, colorSpace.getColor(sigIndex));
     }
 

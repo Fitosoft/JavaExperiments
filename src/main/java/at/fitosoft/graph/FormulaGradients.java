@@ -14,10 +14,10 @@ public class FormulaGradients extends JComponent {
 
     @Override
     public void paint(Graphics g) {
-//         crazyCircles1((Graphics2D) g);
+         crazyCircles1((Graphics2D) g);
 //        crazyCircles2((Graphics2D) g);
 //         crazyCircles3((Graphics2D) g);
-         crazyCircles4((Graphics2D) g);
+//         crazyCircles4((Graphics2D) g);
     }
 
     private void crazyCircles1(Graphics2D g2) {
@@ -35,7 +35,7 @@ public class FormulaGradients extends JComponent {
                 -2.,
                 4.,
                 2.,
-                0.003,
+                0.001,
                 g2);
     }
 
@@ -50,11 +50,11 @@ public class FormulaGradients extends JComponent {
                             return Math.log10(Math.sin(x) + 1) * Math.cos(Math.tan(y * y));
                         }
                     },
-                -4.0,
-                -2.,
-                4.,
-                2.,
-                0.003,
+                -0.3,
+                0.95,
+                0.3,
+                1.05,
+                0.0001,
                 g2);
     }
 
@@ -88,11 +88,11 @@ public class FormulaGradients extends JComponent {
                             return Math.atan(Math.sin(x) * x) * Math.atan(Math.cos(y * y) * y);
                         }
                     },
-                -8.0,
-                -4.,
-                8.,
-                4.,
-                0.003,
+                -20.0,
+                -9.,
+                20.,
+                9.,
+                0.005,
                 g2);
     }
 
