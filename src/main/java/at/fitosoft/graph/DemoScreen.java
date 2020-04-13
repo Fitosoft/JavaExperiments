@@ -19,10 +19,10 @@ public class DemoScreen extends JComponent {
         LOG.debug(g2.getTransform());
         LOG.debug(g2.getDeviceConfiguration().getBounds());
 
-        raster = new Raster(-8.0, -1., 8., 1., 0.06, g2);
+        raster = new Raster(-8.0, -1.15, 8., 1.04, 0.03, g2);
 
         raster.drawScales(Color.BLACK);
-        raster.drawDemoSinus();
+        raster.drawDemoTrigonometry();
     }
 
     public static void main(String[] args) {

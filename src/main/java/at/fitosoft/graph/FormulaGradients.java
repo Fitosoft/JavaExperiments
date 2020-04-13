@@ -14,9 +14,9 @@ public class FormulaGradients extends JComponent {
 
     @Override
     public void paint(Graphics g) {
-         crazyCircles1((Graphics2D) g);
+//         crazyCircles1((Graphics2D) g);
 //        crazyCircles2((Graphics2D) g);
-//         crazyCircles3((Graphics2D) g);
+         crazyCircles3((Graphics2D) g);
 //         crazyCircles4((Graphics2D) g);
     }
 
