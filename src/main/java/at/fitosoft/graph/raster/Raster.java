@@ -49,9 +49,9 @@ public class Raster {
         LOG.debug(width);
         LOG.debug(height);
         double scaleX = windowBounds.width / width;
-        double scaleY = windowBounds.height / height;
+        double scaleY = -windowBounds.height / height;
         AffineTransform transform =
-                new AffineTransform(scaleX, 0., 0, scaleY, -minX * scaleX, -minY * scaleY);
+                new AffineTransform(scaleX, 0., 0, scaleY, -minX * scaleX, -maxY * scaleY);
         LOG.debug(transform);
         g.setTransform(transform);
 
@@ -60,7 +60,7 @@ public class Raster {
 //        drawScales(Color.BLACK);
     }
 
-    public void drawDemoSinus() {
+    public void drawDemoTrigonometry() {
         ColorSpace transition = new ColorSpace(Arrays.asList(
                 Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.RED),
                 10);
@@ -68,6 +68,20 @@ public class Raster {
         int step = 0;
         for (double x = minX; x <= maxX; x += resolution) {
             double y = Math.sin(x);
+            drawPoint(x, y, transition.getColor(step));
+            step++;
+        }
+
+        step = 0;
+        for (double x = minX; x <= maxX; x += resolution) {
+            double y = Math.cos(x);
+            drawPoint(x, y, transition.getColor(step));
+            step++;
+        }
+
+        step = 0;
+        for (double x = minX; x <= maxX; x += resolution / 2) {
+            double y = Math.tan(x);
             drawPoint(x, y, transition.getColor(step));
             step++;
         }
