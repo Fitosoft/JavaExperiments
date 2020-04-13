@@ -63,7 +63,7 @@ public class Raster {
     public void drawDemoTrigonometry() {
         ColorSpace transition = new ColorSpace(Arrays.asList(
                 Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.RED),
-                10);
+                30);
 
         int step = 0;
         for (double x = minX; x <= maxX; x += resolution) {
@@ -82,7 +82,7 @@ public class Raster {
         step = 0;
         for (double x = minX; x <= maxX; x += resolution / 2) {
             double y = Math.tan(x);
-            drawPoint(x, y, transition.getColor(step));
+            drawPoint(x, y, transition.getColor(step / 2));
             step++;
         }
     }
