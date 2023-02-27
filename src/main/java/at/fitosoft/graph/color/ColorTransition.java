@@ -1,6 +1,7 @@
 package at.fitosoft.graph.color;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.List;
  * Creates color transitions between two colors.
  */
 public class ColorTransition {
-    private static final Logger LOG = Logger.getLogger(ColorTransition.class);
+    private static final Logger LOG = LogManager.getLogger(ColorTransition.class);
 
     private final List<Color> colors;
 
@@ -22,9 +23,9 @@ public class ColorTransition {
      * @param steps number of sample steps in between
      */
     public ColorTransition(Color start, Color end, int steps) {
-        double doubleSteps = (double) (steps + 1);
+        double doubleSteps = steps + 1;
 
-        colors = new ArrayList<Color>();
+        colors = new ArrayList<>();
 
         double startRed = start.getRed();
         double startGreen = start.getGreen();
@@ -61,6 +62,6 @@ public class ColorTransition {
     }
 
     public List<Color> colors() {
-        return new ArrayList<Color>(colors);
+        return new ArrayList<>(colors);
     }
 }

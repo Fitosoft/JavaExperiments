@@ -1,6 +1,7 @@
 package at.fitosoft.graph.color;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -10,12 +11,12 @@ import java.util.List;
  * Creates a color space that consists of several colors and transitions in between.
  */
 public class ColorSpace {
-    private static final Logger LOG = Logger.getLogger(ColorSpace.class);
+    private static final Logger LOG = LogManager.getLogger(ColorSpace.class);
 
-    private List<Color> colors;
+    private final List<Color> colors;
 
     public ColorSpace(List<Color> sourceColors, int stepsPerColor) {
-        colors = new ArrayList<Color>();
+        colors = new ArrayList<>();
 
         Color previousColor = sourceColors.get(0);
         colors.add(previousColor);
@@ -36,6 +37,6 @@ public class ColorSpace {
     }
 
     public List<Color> colors() {
-        return new ArrayList<Color>(colors);
+        return new ArrayList<>(colors);
     }
 }

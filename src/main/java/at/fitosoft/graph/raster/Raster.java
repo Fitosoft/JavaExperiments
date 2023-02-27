@@ -1,19 +1,17 @@
 package at.fitosoft.graph.raster;
 
 import at.fitosoft.graph.color.ColorSpace;
-import at.fitosoft.graph.color.ColorTransition;
-import com.sun.istack.internal.NotNull;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Raster {
-    private static final Logger LOG = Logger.getLogger(Raster.class);
+    private static final Logger LOG = LogManager.getLogger(Raster.class);
 
     private final Double minX;
     private final Double minY;
@@ -24,9 +22,9 @@ public class Raster {
     private final Double width;
     private final Double height;
 
-    public Raster(@NotNull Double minX, @NotNull Double minY,
-                  @NotNull Double maxX, @NotNull Double maxY,
-                  @NotNull Double resolution, @NotNull Graphics2D g) {
+    public Raster(Double minX, Double minY,
+                  Double maxX, Double maxY,
+                  Double resolution, Graphics2D g) {
 
         this.minX = minX;
         this.minY = minY;

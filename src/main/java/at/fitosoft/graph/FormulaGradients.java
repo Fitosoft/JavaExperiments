@@ -3,21 +3,22 @@ package at.fitosoft.graph;
 import at.fitosoft.graph.color.ColorSpace;
 import at.fitosoft.graph.formula.FormulaPainter;
 import at.fitosoft.graph.raster.Raster;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Arrays;
 
 public class FormulaGradients extends JComponent {
-    private static final Logger LOG = Logger.getLogger(FormulaGradients.class);
+    private static final Logger LOG = LogManager.getLogger(FormulaGradients.class);
 
     @Override
     public void paint(Graphics g) {
 //         crazyCircles1((Graphics2D) g);
 //        crazyCircles2((Graphics2D) g);
-         crazyCircles3((Graphics2D) g);
-//         crazyCircles4((Graphics2D) g);
+//         crazyCircles3((Graphics2D) g);
+         crazyCircles4((Graphics2D) g);
     }
 
     private void crazyCircles1(Graphics2D g2) {
